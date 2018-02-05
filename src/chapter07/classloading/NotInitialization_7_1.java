@@ -1,10 +1,10 @@
-package org.fenixsoft.classloading;
+package chapter07.classloading;
 
 /**
  * 被动使用类字段演示一：
-* 通过子类引用父类的静态字段，不会导致子类初始化
+ * 通过子类引用父类的静态字段，不会导致子类初始化
  **/
-public class SuperClass {
+class SuperClass {
 
 	static {
 		System.out.println("SuperClass init!");
@@ -13,7 +13,7 @@ public class SuperClass {
 	public static int value = 123;
 }
 
-public class SubClass extends SuperClass {
+ class SubClass extends SuperClass {
 
 	static {
 		System.out.println("SubClass init!");
@@ -23,7 +23,7 @@ public class SubClass extends SuperClass {
 /**
  * 非主动使用类字段演示
  **/
-public class NotInitialization {
+public class NotInitialization_7_1 {
 
 	public static void main(String[] args) {
 		System.out.println(SubClass.value);
